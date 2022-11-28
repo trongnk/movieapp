@@ -1,0 +1,21 @@
+<resources>
+    <style name="Subtitle">
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Title" parent="Subtitle">
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Widget.MovieApp.Button.OutlinedButton" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="cornerRadius">@dimen/button_radius</item>
+        <item name="strokeColor">?colorPrimary</item>
+        <item name="strokeWidth">@dimen/button_stroke</item>
+    </style>
+    <style name="Widget.MovieApp.Button" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">@dimen/button_radius</item>
+    </style>
+    <style name="Widget.MovieApp.FadedButton" parent="Widget.MaterialComponents.Button">
+        <item name="cornerRadius">@dimen/button_radius</item>
+        <item name="backgroundTint">@color/grey</item>
+        <item name="android:textColor">@color/grey2</item>
+    </style>
+</resources>

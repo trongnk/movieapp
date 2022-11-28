@@ -6,9 +6,9 @@
       "rating": 7.8,
       "duration": "2h 30min",
       "genre": "Action, Sci-Fi",
-      "release_date": "3 September 2020",
+      "release_date": "20200903",
       "trailer_link": "https://www.youtube.com/watch?v=LdOM0x0XDMo",
-      "poster": "telnet.png"
+      "poster": "tenet"
     },
     {
       "title": "Spider-Man: Into the Spider-Verse",
@@ -16,9 +16,9 @@
       "rating": 8.4,
       "duration": "1h 57min",
       "genre": "Action, Animation, Adventure",
-      "release_date": "14 December 2018",
+      "release_date": "20181214",
       "trailer_link": "https://www.youtube.com/watch?v=tg52up16eq0",
-      "poster": "spider_man.png"
+      "poster": "spider_man"
     },
     {
       "title": "Knives Out",
@@ -26,9 +26,9 @@
       "rating": 7.9,
       "duration": "2h 10min",
       "genre": "Comedy, Crime, Drama",
-      "release_date": "27 November 2019",
+      "release_date": "20191127",
       "trailer_link": "https://www.youtube.com/watch?v=qGqiHJTsRkQ",
-      "poster": "knives_out.png"
+      "poster": "knives_out"
     },
     {
       "title": "Guardians of the Galaxy",
@@ -36,9 +36,9 @@
       "rating": 8.0,
       "duration": "2h 1min",
       "genre": "Action, Adventure, Comedy",
-      "release_date": "1 August 2014",
+      "release_date": "20140801",
       "trailer_link": "https://www.youtube.com/watch?v=d96cjJhvlMA",
-      "poster": "guardians_of_the_galaxy.png"
+      "poster": "guardians_of_the_galaxy"
     },
     {
       "title": "Avengers: Age of Ultron",
@@ -46,9 +46,9 @@
       "rating": 7.3,
       "duration": "2h 21min",
       "genre": "Action, Adventure, Sci-Fi",
-      "release_date": "1 May 2015",
+      "release_date": "20150501",
       "trailer_link": "https://www.youtube.com/watch?v=tmeOjFno6Do",
-      "poster": "avengers.png"
+      "poster": "avengers"
     }
   ]
 }

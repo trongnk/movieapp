@@ -4,8 +4,8 @@ import com.trongnk.movieapp.domain.entity.MovieInfo
 import com.trongnk.movieapp.domain.repository.MovieRepository
 import com.trongnk.movieapp.domain.util.Result
 
-class AddMovieToWatchList(
+class GetMovieDetail(
     private val movieRepository: MovieRepository
 ) {
-    suspend fun execute(movie: MovieInfo): Result<MovieInfo> = movieRepository.addMovieToWatchList(movie)
+    suspend fun execute(title: String): Result<MovieInfo?> = movieRepository.getMovieDetail(title)
 }

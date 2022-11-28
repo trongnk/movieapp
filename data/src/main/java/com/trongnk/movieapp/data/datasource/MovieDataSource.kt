@@ -11,6 +11,7 @@ interface MovieDataSource {
 
     interface Local {
         suspend fun getMovieList(): Result<List<MovieInfo>>
+        suspend fun getMovieDetail(title: String): Result<MovieInfo?>
         suspend fun addMovieToWatchList(movie: MovieInfo): Result<MovieInfo>
         suspend fun removeMovieFromWatchList(movie: MovieInfo): Result<MovieInfo>
     }

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.trongnk.movieapp.view.detail.MovieDetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:padding="@dimen/space_small"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/top_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/poster_image_view"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:src="@drawable/avengers"
+                app:layout_constraintEnd_toStartOf="@id/detail_container"
+                app:layout_constraintHorizontal_weight="0.35"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:moviePoster="@{viewModel.movieData.poster}" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/detail_container"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="0.65"
+                app:layout_constraintStart_toEndOf="@id/poster_image_view"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/title_textview"
+                    style="@style/Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.movieData.title}"
+                    android:layout_marginEnd="@dimen/space_small"
+                    android:textSize="@dimen/text_medium"
+                    app:layout_constraintEnd_toStartOf="@id/rating_textview"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Tenet" />
+
+                <TextView
+                    android:id="@+id/rating_textview"
+                    style="@style/Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_average"
+                    android:textSize="@dimen/text_normal"
+                    app:layout_constraintBottom_toBottomOf="@id/max_rate_textview"
+                    app:layout_constraintEnd_toStartOf="@id/max_rate_textview"
+                    app:rating="@{viewModel.movieData.rating}"
+                    tools:text="7.8" />
+
+                <TextView
+                    android:id="@+id/max_rate_textview"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_average"
+                    android:text="@string/max_rate"
+                    android:textSize="@dimen/text_normal"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/title_textview" />
+
+                <Button
+                    style="@style/Widget.MovieApp.FadedButton"
+                    android:id="@+id/add_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@{safeUnbox(viewModel.movieData.watchList) ? @string/remove_from_watchlist : @string/add_to_watchlist}"
+                    app:layout_constraintStart_toStartOf="@id/title_textview"
+                    app:layout_constraintTop_toBottomOf="@id/title_textview"
+                    tools:text="@string/add_to_watchlist" />
+
+                <Button
+                    style="?materialButtonOutlinedStyle"
+                    android:id="@+id/watch_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/watch_trailer"
+                    app:layout_constraintStart_toStartOf="@id/title_textview"
+                    app:layout_constraintTop_toBottomOf="@id/add_button"
+                    tools:text="@string/watch_trailer" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/short_description_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/top_layout"
+            android:paddingTop="@dimen/text_normal"
+            android:orientation="vertical">
+            <include layout="@layout/view_divider" />
+            <TextView
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/short_description"
+                android:layout_marginTop="@dimen/space_normal"
+                android:textSize="@dimen/text_normal"/>
+            <TextView
+                android:id="@+id/description_textview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_normal"
+                android:text="@{viewModel.movieData.description}"
+                tools:text="Armed with only one word, Tenet, and fighting for the survival of the entire world, a Protagonist journeys through a twilight world of international espionage on a mission that will unfold in something beyond real time."
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/details_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/short_description_layout"
+            android:paddingTop="@dimen/text_normal"
+            android:orientation="vertical">
+            <include layout="@layout/view_divider" />
+            <TextView
+                style="@style/Title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/details"
+                android:layout_marginTop="@dimen/space_normal"
+                android:textSize="@dimen/text_normal"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/space_small"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/genre"
+                    android:gravity="end"
+                    android:layout_marginEnd="@dimen/space_average"
+                    android:layout_weight="0.35"
+                    android:textSize="@dimen/text_normal"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@{viewModel.movieData.genre}"
+                    android:layout_weight="0.65"
+                    android:textSize="@dimen/text_normal"
+                    tools:text="Action, Sci-Fi"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    style="@style/Title"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="@string/released_date"
+                    android:gravity="end"
+                    android:layout_marginEnd="@dimen/space_average"
+                    android:layout_weight="0.35"
+                    android:textSize="@dimen/text_normal"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:releasedDate="@{viewModel.movieData.releaseDate}"
+                    android:layout_weight="0.65"
+                    android:textSize="@dimen/text_normal"
+                    tools:text="3 September 2020"/>
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

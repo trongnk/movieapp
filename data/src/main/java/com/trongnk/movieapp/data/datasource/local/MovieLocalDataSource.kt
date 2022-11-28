@@ -32,6 +32,11 @@ class MovieLocalDataSource(
             movies.map { it.toMovieInfo() }
         }
 
+    override suspend fun getMovieDetail(title: String): Result<MovieInfo?> = resultCatching {
+        movieDao.getMoviesByTitle(title).firstOrNull()?.toMovieInfo()
+
+    }
+
     override suspend fun addMovieToWatchList(movie: MovieInfo): Result<MovieInfo> =
         resultCatching {
             movieDao.updateMovie(movie.toMovie().apply { watchList = true })

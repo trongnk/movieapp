@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">MovieApp</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="movie_list_fragment_label">Movies</string>
+    <string name="movie_detail_fragment_label">Detail</string>
+    <string name="on_my_watchlist">ON MY WATCHLIST</string>
+    <string name="max_rate">/10</string>
+    <string name="add_to_watchlist">+ADD TO WATCHLIST</string>
+    <string name="remove_from_watchlist">REMOVE FROM WATCHLIST</string>
+    <string name="short_description">Short Description</string>
+    <string name="details">Details</string>
+    <string name="genre">Genre</string>
+    <string name="released_date">Released date</string>
+    <string name="watch_trailer">WATCH TRAILER</string>
+    <string name="menu_sort">Sort</string>
+    <string name="sort_title">Title</string>
+    <string name="sort_released_date">Released Date</string>
+
+    <array name="sort_types">
+        <item>@string/sort_title</item>
+        <item>@string/sort_released_date</item>
+    </array>
 </resources>
