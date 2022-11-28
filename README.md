@@ -11,12 +11,12 @@
 
 ## Architecture
 <p align="center">
-<img src="https://raw.githubusercontent.com/trongnk/movieapp/blob/main/screenshots/architecture.png">
+<img src="https://github.com/trongnk/movieapp/blob/main/screenshots/architecture.png">
 </p>
 
 ## Data Flow
 <p align="center">
-<img src="https://raw.githubusercontent.com/trongnk/movieapp/blob/main/screenshots/data_flow.png">
+<img src="https://github.com/trongnk/movieapp/blob/main/screenshots/data_flow.png">
 </p>
 
 ## Project Structure
@@ -27,7 +27,7 @@ The source code is organized into 3 modules:
 
 ## Screenshot
 <p align="center">
-<img src="https://raw.githubusercontent.com/trongnk/movieapp/blob/main/screenshots/screenshot.png">
+<img src="https://github.com/trongnk/movieapp/blob/main/screenshots/screenshot.png">
 </p>
 
 ## Libraries
